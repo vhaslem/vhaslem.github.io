@@ -1,0 +1,9 @@
+- title: Valon Haslem
+  url: /
+- title: Projects
+  url: /projects/
+  children:
+    - title: Research Interests
+      url: /projects/research/
+    - title: Data Projects
+      url: /projects/datascience/

@@ -1,3 +1,16 @@
-title: Valon Haslem
-description: Applied Math & Economics — portfolio
+title: "Valon Haslem"
+description: "Applied Math & Economics"
 theme: jekyll-theme-hacker   # change this to any supported jekyll-theme-*
+# baseurl: "" # set if repo is not user/organization page
+url: https://vhaslem.github.io # your site URL for absolute_url helpers
+lang: en
+author:
+  name: "Valon Haslem"
+  email: "valondhaslem@gmail.com"
+
+# optional: social links used by layout
+social:
+  - name: GitHub
+    url: https://github.com/your-username
+  - name: LinkedIn
+    url: https://linkedin.com/in/your-username

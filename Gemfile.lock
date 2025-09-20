@@ -277,6 +277,9 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll
+  jekyll-feed
+  jekyll-remote-theme
+  jekyll-seo-tag
 
 BUNDLED WITH
    2.7.2

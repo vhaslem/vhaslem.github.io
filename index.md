@@ -27,7 +27,7 @@
   </section>
 
   <footer>
-    <p>© 2025 Valon — <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>© 2025 Valon — <a href="valondhaslem@gmail.com">valondhaslem@gmail.com</a></p>
   </footer>
 </body>
 </html>

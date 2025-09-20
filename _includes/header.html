@@ -1,0 +1,36 @@
+<nav class="site-header" aria-label="Main Navigation">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      {{ site.title | default: "My Site" }}
+    </a>
+
+    <!-- Hamburger button (visible on small screens) -->
+    <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <!-- Primary nav -->
+    <ul id="primary-nav" class="primary-nav" role="menubar">
+      {% for item in site.data.navigation %}
+        {% assign has_children = item.children %}
+        <li class="nav-item {% if has_children %}has-dropdown{% endif %}" role="none">
+          <a role="menuitem" href="{{ item.url | relative_url }}" class="nav-link" aria-haspopup="{{ has_children | default: false }}" aria-expanded="false">
+            {{ item.title }}
+            {% if has_children %}
+              <span class="caret" aria-hidden="true">▾</span>
+            {% endif %}
+          </a>
+
+          {% if has_children %}
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open submenu"></button>
+            <ul class="dropdown" role="menu" aria-label="{{ item.title }} submenu">
+              {% for child in item.children %}
+                <li role="none"><a role="menuitem" class="dropdown-link" href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
