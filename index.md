@@ -13,7 +13,7 @@
   </header>
 
   <section id="projects">
-    <h2>Selected Projects</h2>
+    <h2> Research Projects</h2>
     <ul>
       <li><a href="Resources\GRO_MECS_paper.pdf">Knot Theory Research</a></li>
       <li><a href="Resources\N_ominos.pdf">Combinatorics Research</a></li>
@@ -23,7 +23,8 @@
 
   <section id="about">
     <h2>About</h2>
-    <p>Short bio / contact info / resume link.</p>
+    <p>Short bio / <a href="+1 406-403-4315">+1 (406) 403-4315</a> 
+    / <a href="Resources\valon_haslem_resume.pdf">Resume</a> / <a href="CV">CV</a></p>
   </section>
 
   <footer>
