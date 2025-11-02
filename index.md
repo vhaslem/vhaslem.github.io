@@ -15,8 +15,8 @@
   <section id="projects">
     <h2>Selected Projects</h2>
     <ul>
-      <li><a href="#project1">Knot Theory Research</a></li>
-      <li><a href="#project2">Spotify Recommendations</a></li>
+      <li><a href="Resources\GRO_MECS_paper.pdf">Knot Theory Research</a></li>
+      <li><a href="Resources\N_ominos.pdf">Combinatorics Research</a></li>
       <!-- add project pages or links here -->
     </ul>
   </section>
