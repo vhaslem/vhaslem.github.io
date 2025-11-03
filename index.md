@@ -9,7 +9,8 @@
 <body>
   <header>
     <h1>Valon Haslem</h1>
-    <p>Applied Math & Economics</p>
+    <p>Applied Math & Economics Student</p>
+    <p>Gonzaga University</p>
   </header>
 
   <section id="projects">
@@ -24,7 +25,7 @@
   <section id="about">
     <h2>About</h2>
     <p>Short bio / <a href="+1 406-403-4315">+1 (406) 403-4315</a> 
-    / <a href="Resources\valon_haslem_resume.pdf">Resume</a> / <a href="CV">CV</a></p>
+    / <a href="Resources\valon_haslem_resume.pdf">Resume</a> / <a href="Resources\valonhaslem_cv.pdf">CV</a></p>
   </section>
 
   <footer>
