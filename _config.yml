@@ -1,6 +1,6 @@
 title: "Valon Haslem"
 description: "Applied Math & Economics"
-theme: jekyll-theme-minima   # change this to any supported jekyll-theme-*
+theme: minima #jekyll-theme-minima   # change this to any supported jekyll-theme-*
 # baseurl: "" # set if repo is not user/organization page
 url: https://vhaslem.github.io # your site URL for absolute_url helpers
 lang: en
