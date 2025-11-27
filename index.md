@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Valon Haslem — Portfolio</title>
+  <!-- <title>Valon Haslem — Portfolio</title> -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,13 +18,15 @@
     <ul>
       <li><a href="Resources\GRO_MECS_paper.pdf">Knot Theory Research</a></li>
       <li><a href="Resources\N_ominos.pdf">Combinatorics Research</a></li>
+      <li><a href="https://github.com/vhaslem/VentilatoryThresholdMethods/tree/main">Ventilatory Threshold Methods</a></li>
       <!-- add project pages or links here -->
     </ul>
   </section>
 
   <section id="about">
     <h2>About</h2>
-    <p>Short bio / <a href="+1 406-403-4315">+1 (406) 403-4315</a> 
+    <p>I'm originally from Great Falls, MT, and I will be graduating from Gonzaga University with my bachelor's in Spring 2026. I'm deeply interested in statistical applications to healthcare data analytics and statistics. </p>
+    <p> <a href="+1 406-403-4315">+1 (406) 403-4315</a> 
     / <a href="Resources\valon_haslem_resume.pdf">Resume</a> / <a href="Resources\valonhaslem_cv.pdf">CV</a></p>
   </section>
 
