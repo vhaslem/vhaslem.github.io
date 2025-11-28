@@ -9,7 +9,7 @@
 <body>
   <header>
     <h1>Valon Haslem</h1>
-    <p>Applied Math & Economics Student</p>
+    <p>Applied Math & Economics Undergraduate Student</p>
     <p>Gonzaga University</p>
   </header>
 
@@ -19,6 +19,7 @@
       <li><a href="Resources\GRO_MECS_paper.pdf">Knot Theory Research</a></li>
       <li><a href="Resources\N_ominos.pdf">Combinatorics Research</a></li>
       <li><a href="https://github.com/vhaslem/VentilatoryThresholdMethods/tree/main">Ventilatory Threshold Methods</a></li>
+      <li><a href="https://github.com/vhaslem/ERRWT-Slang/tree/main">Random Walk Model of Linguistics Behavior</a></li>
       <!-- add project pages or links here -->
     </ul>
   </section>
