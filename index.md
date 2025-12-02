@@ -28,7 +28,7 @@
     <h2>About</h2>
     <p>I'm originally from Great Falls, MT, and I will be graduating from Gonzaga University with my bachelor's in Spring 2026. I'm deeply interested in statistical applications to healthcare data analytics and statistics. </p>
     <p> <a href="+1 406-403-4315">+1 (406) 403-4315</a> 
-    / <a href="Resources\valon_haslem_resume.pdf">Resume</a> / <a href="Resources\valonhaslem_cv.pdf">CV</a></p>
+    / <a href="Resources\valonhaslem_resume.pdf">Resume</a> / <a href="Resources\valonhaslem_cv.pdf">CV</a></p>
   </section>
 
   <footer>
