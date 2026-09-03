@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+        nav a { margin-right: 15px; text-decoration: none; font-weight: bold; }
+        footer { margin-top: 40px; color: #777; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <!-- Automatically creates links to your 2 pages -->
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+    </nav>
+
+    <main>
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ 'now' | date: "%Y" }} - {{ site.title }}</p>
+    </footer>
+
+</body>
+</html>
