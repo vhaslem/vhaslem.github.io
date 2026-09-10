@@ -8,13 +8,17 @@
         nav a { margin-right: 15px; text-decoration: none; font-weight: bold; }
         footer { margin-top: 40px; color: #777; font-size: 0.9em; }
     </style>
+    {% if page.use_math %}
+        <script src="https://polyfill.io"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    {% endif %}
 </head>
 <body>
 
     <nav>
         <!-- Automatically creates links to your 2 pages -->
         <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/BS1/' | relative_url }}">The Ranking Problem</a>
     </nav>
 
     <main>
@@ -25,6 +29,8 @@
     <footer>
         <p>&copy; {{ 'now' | date: "%Y" }} - {{ site.title }}</p>
     </footer>
+
+
 
 </body>
 </html>

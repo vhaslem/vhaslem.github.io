@@ -1,5 +1,6 @@
 title: Valon Haslem
 description: Stat
 theme: minima
+markdown: kramdown
 plugins:
   - jekyll-feed
