@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Bullstats 1
+title: Bullstats #1
 permalink: /BS1/
 use_math: true
 ---
 
 ### **Bullstats: The Ranking Problem**
-***9/4/2026***
+***9/15/2026***
 
 When I was seven years old, I was gifted a set of small pennants for every active Major League Baseball team. Why? Still not sure. I honestly didn't even watch the MLB, and still don't consistently follow it. But I loved these pennants. I would arrange them according to MLB rankings every morning when they were updated in the newspaper. I enjoyed ranking the teams more than I enjoyed any particular team itself, and this stayed true in many fashions of my life as well as my interests.
 
@@ -18,6 +18,7 @@ To better describe my issues, I will talk about one of my least favorite ranking
 
 I know I'm late to the party on this topic. Please read ***Weapons of Math Destruction*** by Cathy O'Neil for an expert dive into the gaming of this system over the past 30 years. Her critique dives into how the ranking system is designed and the effect on colleges prioritizing certain benchmarks for the sake of ranking alone.
 
+#### Overview
 Here is the 2026 US News ranking of top 230ish national universities along with their admission rates (All data other than US News ranking is from [College Scorecard](https://collegescorecard.ed.gov/)). Some colleges have [dropped out of the US News rankings](https://www.bestcolleges.com/news/these-schools-dropped-out-of-us-news-rankings/) because they disagree heavily with the methodology.
 <iframe src="admissionrate.html" width="100%" height="500px" style="border:none;"></iframe>
 
@@ -27,33 +28,48 @@ A great example is 10 year median earnings, or what students expect to make 10 y
 
 <iframe src="future_earnings.html" width="100%" height="500px" style="border:none;"></iframe>
 
-Here we see another nonlinear trend which still agrees with ranking (for the most part). If you want to make more money, you should go to a better school. But if we reevaluate with ROI we see a different pattern emerge:
+Here we see another nonlinear trend which still agrees with ranking (for the most part). 
 
-<iframe src="roi.html" width="100%" height="500px" style="border:none;"></iframe>
+Here is cost evaluated against ranking, which has the most clear pattern in this dataset:
 
+<iframe src="cost.html" width="100%" height="500px" style="border:none;"></iframe>
+
+In which I see three categories: 1. High ranking expensive schools 2. Medium to low ranking expensive schools and 3. Medium to low ranking cheaper schools. Which clearly implies that US News has an upper limit for how highly ranked a school is if it is cost effective.
+
+But if we evaluate 10-year return against cost, we see a potentially more useful relationship emerge:
+
+<iframe src="costreturnregression.html" width="100%" height="500px" style="border:none;"></iframe>
+
+
+So while value is clearly high for the top 20 or so schools, the falloff is tremendous for schools with decently high rankings. So the only meaningful difference between low ROI medium tier schools and low ROI low tier schools is the amount of money you pay. 
+#### Let's make up our own stats
+But we should engage with how ROI is best calculated.
 I've calculated short term ROI as:
 
 $$
 ROI = Earnings_{6yr} + \frac{Earnings_{6yr} + Earnings_{8yr}}{2} + Earnings_{10yr} + \frac{Earnings_{8yr} + Earnings_{10yr}}{2} - 5 \times MedianAcademicYearCost
 $$
 
-Which measures the expected net gain/loss after 10 years, assuming 5 years of education and 5 years of work. This measure of ROI is credited to the [Georgetown College ROI Data Tool](https://cew.georgetown.edu/cew-reports/roi2025/). It's an imperfect measure, but I'd argue that the college you attended is most impactful to your career in the first few years of work and less meaningful down the road. This value also undercounts schools with good prelaw and premedical programs since earnings are delayed, but still accounts for high earnings corporate careers that one could attain right out of college.
+Which measures the expected net gain/loss after 10 years, assuming 5 years of education and 5 years of work. This measure of ROI is credited to the [Georgetown College ROI Data Tool](https://cew.georgetown.edu/cew-reports/roi2025/). It's an imperfect measure, but I'd argue that the college you attended is most impactful to your career in the first few years of work and less meaningful down the road. So here is Rank against ROI:
 
-Do you see the pattern in this figure? Because I don't. When we change our evaluation metric to a much more useful measure, the pattern ceases to exist. And US News doesn't want you to know this, because they want colleges to play by their rules and coerce schools into adherence to their ranking.
+<iframe src="roi.html" width="100%" height="500px" style="border:none;"></iframe>
 
-Here is cost evaluated against ranking, which has the most clear pattern in this dataset:
+Do you see the pattern in this figure? Because I don't. When we change our evaluation metric to a much more useful measure, the pattern ceases to exist. And US News doesn't want you to know this, because they want colleges to play by their rules and coerce schools into adherence to their ranking. But obviously there are more factors to defining college value as well. Law, medicine, and other prestige fields often place value on the ranking itself. While I'm not going to use the rankings themselves as a value (since I don't trust US News), acceptance rate is a helpful tool to measure perceived prestige. 
+Here is ROI regressed against acceptance rate:
+<iframe src="roi_arate_3_means.html" width="100%" height="500px" style="border:none;"></iframe>
+Which kind of looks like nothing, except the colors show the correlation between rank and acceptance rate observed earlier. But here is the ROI/Rank figure from earlier with a 3-means clustering classifier using acceptance rate and ROI:
 
-<iframe src="cost.html" width="100%" height="500px" style="border:none;"></iframe>
+<iframe src="roi_3_means.html" width="100%" height="500px" style="border:none;"></iframe>
+Which allows us to better evaluate ROI classes with some inclusion for admission rate as a prestige factor. This categorization doesn't automatically qualify △-schools as good, ○-schools as mediocre, and □-schools as poor performing. This metric doesn't account for everything, but it allows us to reevaluate the earlier 10-year earnings against ranking figure.
 
-In which I see three categories: 1. High ranking expensive schools 2. Medium to low ranking expensive schools and 3. Medium to low ranking cheaper schools. Which clearly implies that US News has an upper limit for how highly ranked a school is if it is cost effective. But measurement against ROI suggests this is a mistake, because some of these schools don't rank in agreement with their ROI.
+<iframe src="future_earnings_3_means.html" width="100%" height="500px" style="border:none;"></iframe>
+So while this figure remains functionally identical, ○-schools and □-schools with high 10-year earnings should be questioned. They may still be strong schools, but their value isn't conveyed by prestige and ROI alone. So if prestige and ROI are the primary reasons to attend such a school, maybe an alternative should be considered.
 
-<iframe src="costreturnregression.html" width="100%" height="500px" style="border:none;"></iframe>
+The compression of information in rankings is an essential flaw. At the end of the day, a 3-means clustering tool is insufficient. Student happiness and success metrics are surveyed by Princeton Review and Gallup-Purdue, but containing measures such as cost, ROI, and even nonnumeric measures involving demographics and student culture can't all be captured by this singular value. Let's not pretend that the US News and World Report is an impressive feat. Anyone can make a system and assign points for certain metrics. It doesn't mean the system accurately reflects the true value for you as an individual student. 
 
-So while value is clearly high for the top 20 or so schools, the falloff is tremendous for schools with decently high rankings. So the only meaningful difference between low ROI medium tier schools and low ROI low tier schools is the amount of money you pay.
+#### Conclusion
 
-The other issue with rankings is the volume of information being compressed. At the end of the day, ROI alone is not the best measure. Student happiness and success metrics are surveyed by Princeton Review and Gallup-Purdue, but containing measures such as cost, ROI, and even nonnumeric measures involving demographics and student culture can't all be captured by this singular value. Let's not pretend that the US News and World Report is an impressive feat. Anyone can make a system and assign points for certain metrics. It doesn't mean the system accurately reflects the true value. Unless the only thing that makes a student happy is the ranking of their undergraduate institution (I pity these people), then there is only so much information to be reaped from these rankings. And it often is flat out wrong.
-
-At the end of the day, applying to college is messy. It's hard to be methodical about choosing the right college because every school wants your money. And with the incoming demographic dropoff, schools are desperate, and will inflate their public perceptions in any way possible. So make the decision simpler:
+Applying to college is messy. It's hard to be methodical about choosing the right college because every school wants your money. And with the incoming demographic dropoff, schools are desperate, and will inflate their public perceptions in any way possible. So make the decision simpler:
 
 | -------- |  | This school will make me happy | This school will not make me happy |
 | -------- | | -------- | -------- |
