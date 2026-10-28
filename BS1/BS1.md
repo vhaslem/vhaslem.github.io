@@ -20,6 +20,7 @@ I know I'm late to the party on this topic. Please read ***Weapons of Math Destr
 
 #### Overview
 Here is the 2026 US News ranking of top 230ish national universities along with their admission rates (All data other than US News ranking is from [College Scorecard](https://collegescorecard.ed.gov/)). Some colleges have [dropped out of the US News rankings](https://www.bestcolleges.com/news/these-schools-dropped-out-of-us-news-rankings/) because they disagree heavily with the methodology.
+
 <iframe src="admissionrate.html" width="100%" height="500px" style="border:none;"></iframe>
 
 College admission rates are another hotly contested issue, because the experience of applying to college suggests the idea that lower admission rates automatically imply the college is better. What makes a college better? Great question. Prestige, return on investment, and student happiness in life are many gauges in which we measure the performance of a college. My first issue with rankings is that rank is a ***nonparametric statistic***, or it doesn't depend on an underlying distribution. If we assign rankings on a points based system and don't describe the underlying distribution, we don't know rank-by-rank significance of school. And using rankings in this fashion reinforces an incredibly damaging belief to the millions of students who compete for spots in top universities every year, because students believe that ***higher rankings will proportionately improve life and life trajectory***. While we already see this doesn't hold for admission rate, let's also examine some other valuable metrics.
@@ -57,12 +58,15 @@ Which measures the expected net gain/loss after 10 years, assuming 5 years of ed
 Do you see the pattern in this figure? Because I don't. When we change our evaluation metric to a much more useful measure, the pattern ceases to exist. And US News doesn't want you to know this, because they want colleges to play by their rules and coerce schools into adherence to their ranking. But obviously there are more factors to defining college value as well. Law, medicine, and other prestige fields often place value on the ranking itself. While I'm not going to use the rankings themselves as a value (since I don't trust US News), acceptance rate is a helpful tool to measure perceived prestige. 
 Here is ROI regressed against acceptance rate:
 <iframe src="roi_arate_3_means.html" width="100%" height="500px" style="border:none;"></iframe>
+
 Which kind of looks like nothing, except the colors show the correlation between rank and acceptance rate observed earlier. But here is the ROI/Rank figure from earlier with a 3-means clustering classifier using acceptance rate and ROI:
 
 <iframe src="roi_3_means.html" width="100%" height="500px" style="border:none;"></iframe>
+
 Which allows us to better evaluate ROI classes with some inclusion for admission rate as a prestige factor. This categorization doesn't automatically qualify △-schools as good, ○-schools as mediocre, and □-schools as poor performing. This metric doesn't account for everything, but it allows us to reevaluate the earlier 10-year earnings against ranking figure.
 
 <iframe src="future_earnings_3_means.html" width="100%" height="500px" style="border:none;"></iframe>
+
 So while this figure remains functionally identical, ○-schools and □-schools with high 10-year earnings should be questioned. They may still be strong schools, but their value isn't conveyed by prestige and ROI alone. So if prestige and ROI are the primary reasons to attend such a school, maybe an alternative should be considered.
 
 The compression of information in rankings is an essential flaw. At the end of the day, a 3-means clustering tool is insufficient. Student happiness and success metrics are surveyed by Princeton Review and Gallup-Purdue, but containing measures such as cost, ROI, and even nonnumeric measures involving demographics and student culture can't all be captured by this singular value. Let's not pretend that the US News and World Report is an impressive feat. Anyone can make a system and assign points for certain metrics. It doesn't mean the system accurately reflects the true value for you as an individual student. 
@@ -71,17 +75,17 @@ The compression of information in rankings is an essential flaw. At the end of t
 
 Since we clearly don't need to be professionals to do this, let's just make up our own ranking system. Multivariate rank is a tricky problem with an imprecise solution, but we can use a novel multivariate rank method based on optimal transport theory. We use admission rate (our prestige factor), median graduate debt, and our ROI calculation from earlier. We implement the method, take the euclidean distance of the calculated ranks (1- rank for values that we want to inversely order), and find the top 10 schools:
 
-| **School** | **Computed Rank** |
-| University of Florida-Online | 1.67813 |
-| CUNY Bernard M Baruch College | 1.662284 |
-| Brigham Young University | 1.662284 |
-| Helene Fuld College of Nursing | 1.613085 |
-| Massachusetts Institute of Technology | 1.578805 |
-| Maine Maritime Academy | 1.537903 |
-| University of Washington-Bothell | 1.537903 |
-| Charles R Drew University of Medicine and Science | 1.535934 |
-| Augusta University | 1.535934 |
-| University of California-Los Angeles | 1.528503 |
+| - | **School** | **Computed Rank Sum** |
+| 1 | University of Florida-Online | 1.67813 |
+| 2 | CUNY Bernard M Baruch College | 1.662284 |
+| 3 | Brigham Young University | 1.662284 |
+| 4 | Helene Fuld College of Nursing | 1.613085 |
+| 5 | Massachusetts Institute of Technology | 1.578805 |
+| 6 | Maine Maritime Academy | 1.537903 |
+| 7 | University of Washington-Bothell | 1.537903 |
+| 8 | Charles R Drew University of Medicine and Science | 1.535934 |
+| 9 | Augusta University | 1.535934 |
+| 10 | University of California-Los Angeles | 1.528503 |
 
 And clearly this must be the undisputed truth, since numbers don't lie. And you should totally trust me, a random guy on the internet. But if you don't want to trust me, be skeptical. Because I can be as mathematically rigorous as possible and still get an answer you disagree with. The beauty in nonparametric statistics is how easy it is to make up lies with statistics.
 
