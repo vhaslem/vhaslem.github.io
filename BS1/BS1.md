@@ -5,7 +5,7 @@ permalink: /BS1/
 use_math: true
 ---
 
-### **Bullstats: The Ranking Problem**
+### **The Ranking Problem**
 ***9/15/2026***
 
 When I was seven years old, I was gifted a set of small pennants for every active Major League Baseball team. Why? Still not sure. I honestly didn't even watch the MLB, and still don't consistently follow it. But I loved these pennants. I would arrange them according to MLB rankings every morning when they were updated in the newspaper. I enjoyed ranking the teams more than I enjoyed any particular team itself, and this stayed true in many fashions of my life as well as my interests.
@@ -66,6 +66,24 @@ Which allows us to better evaluate ROI classes with some inclusion for admission
 So while this figure remains functionally identical, ○-schools and □-schools with high 10-year earnings should be questioned. They may still be strong schools, but their value isn't conveyed by prestige and ROI alone. So if prestige and ROI are the primary reasons to attend such a school, maybe an alternative should be considered.
 
 The compression of information in rankings is an essential flaw. At the end of the day, a 3-means clustering tool is insufficient. Student happiness and success metrics are surveyed by Princeton Review and Gallup-Purdue, but containing measures such as cost, ROI, and even nonnumeric measures involving demographics and student culture can't all be captured by this singular value. Let's not pretend that the US News and World Report is an impressive feat. Anyone can make a system and assign points for certain metrics. It doesn't mean the system accurately reflects the true value for you as an individual student. 
+
+#### Let's make up our own ranking
+
+Since we clearly don't need to be professionals to do this, let's just make up our own ranking system. Multivariate rank is a tricky problem with an imprecise solution, but we can use a novel multivariate rank method based on optimal transport theory. We use admission rate (our prestige factor), median graduate debt, and our ROI calculation from earlier. We implement the method, take the euclidean distance of the calculated ranks (1- rank for values that we want to inversely order), and find the top 10 schools:
+
+| **School** | **Computed Rank** |
+| University of Florida-Online | 1.67813 |
+| CUNY Bernard M Baruch College | 1.662284 |
+| Brigham Young University | 1.662284 |
+| Helene Fuld College of Nursing | 1.613085 |
+| Massachusetts Institute of Technology | 1.578805 |
+| Maine Maritime Academy | 1.537903 |
+| University of Washington-Bothell | 1.537903 |
+| Charles R Drew University of Medicine and Science | 1.535934 |
+| Augusta University | 1.535934 |
+| University of California-Los Angeles | 1.528503 |
+
+And clearly this must be the undisputed truth, since numbers don't lie. And you should totally trust me, a random guy on the internet. But if you don't want to trust me, be skeptical. Because I can be as mathematically rigorous as possible and still get an answer you disagree with. The beauty in nonparametric statistics is how easy it is to make up lies with statistics.
 
 #### Conclusion
 
